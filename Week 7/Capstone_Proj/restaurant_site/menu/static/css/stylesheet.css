@@ -1,3 +1,5 @@
+/* home section */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -60,3 +62,31 @@ img {
 .contact-info {
   text-align: center;
 }
+
+/* menu section */
+
+.menu-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.menu-item {
+  background: #e19494;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.menu-grid {
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: max-content;
+}
+
+.grid-span-3 {
+  grid-column: span 3;
+  max-height: 30px;
+} 

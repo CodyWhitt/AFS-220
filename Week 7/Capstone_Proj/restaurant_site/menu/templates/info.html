@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Italian restaurant!</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <nav>
+        <a href="home">Home</a>
+        <a href="menu">Menu</a>
+        <a href="catering">Catering</a>
+        <a href="order">Order</a>
+    </nav>
+    <div class="main-section">
+        <div class="grid-item">
+            <h2>Contact Us</h2>
+            <p>
+                Email: Italianrestaurant@yahoo.com </br>
+                Address: 1234 N 1st ST. • Somewhere, California </br>
+                Phone: 800.564.1234 </br>
+            </p>
+        </div>
+        <div class="grid-item">
+            <h2>Hours</h2>
+            <p>
+                Monday-Thursday: 11AM-8PM </br>
+                Friday-Saturday: 11AM-10PM </br>
+                Sunday: 10AM-7PM
+            </p>
+        </div>
+    </div>
+    <div class="footer grid-item">
+        <a href="menu">Menus</a>
+        <a href="catering">catering</a>
+        <a href="info">Hours &amp; Location</a>
+        <a href="gift-cards">Gift Cards</a>
+        <p>“Contact Us”<br/> Italianrestaurant@yahoo.com</p>
+        <p>© Italian restaurant. All Rights Reserved<br/></p>
+    </div>
+</body>
+</html>

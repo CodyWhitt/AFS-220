@@ -1,32 +1,31 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Italian restaurant!</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
-    <link rel="icon" href="favicon.png"> 
-    <link rel="stylesheet" type="text/css" href="../static/stylesheet.css" />
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 </head>
 <body>
     <nav>
-        <a href="menu.html">Menu</a>
-        <a href="catering.html">Catering </a>
-        <a href="info.html">Hours &amp; Location</a>
-        <a href="gift-cards.html">GIFT CARDS</a>
+        <a href="menu">Menu</a>
+        <a href="catering">Catering </a>
+        <a href="info">Hours &amp; Location</a>
+        <a href="order">Order</a>
     </nav>
     <div class="main-section">
-        <div class="intro grid-item">
+        <div class="grid-item">
             <h2>Great Neighborhood Italian since 2008</h2>
             <p>Located in downtown Somewhere off the square, Italian restaurant is an inviting neighborhood restaurant serving classic Italian and Mediterranean fare seven days a week.</p>
             <img src="../static/lasagna.jpeg"/>
         </div>
-        <div class="menus grid-item">
+        <div class="grid-item">
             <h2>Our menus</h2>
             <p>Join us for lunch, dinner, dessert, or a glass of wine.</p>
-            <a href="menu.html">See Our Menus</a>
+            <a href="menu">See Our Menus</a>
         </div>
-        <div class="weekly-features grid-item">
+        <div class="grid-item">
             <h2>Don't miss our weekly seasonal features</h2>
             <h2>VINO</h2>
             <ul>
@@ -34,21 +33,21 @@
                 <li>Our La Chiara Gavi has been replaced by another Gavi called Villa Sparina. Like all Gavis, this is light, crisp, fruity and refreshing. Plus, the bottle is gorgeous!</li>
             </ul>
         </div>
-        <div class="specials grid-item">
+        <div class="grid-item">
             <h2>Buon Appetito</h2>
             <p><strong>Pesce gatto alfredo $20.99</strong></p>
             <p>Seasoned and sauteed catfish filet served on a bed of fettucine pasta, red bell pepper, zucchini and broccoli then tossed with our house-made alfredo sauce.</p>
             <p><strong>Stuffed trout granchio $24.99</strong></p>
             <p>Whole rainbow trout stuffed with our famous crabcake, grilled and topped with a chipotle, lemon-caper sauce. Served with 2 sides.</p>
         </div>
-        <div class="location grid-item">
+        <div class="grid-item">
             <h2>HOURS &amp; LOCATION</h2>
             <p>Sunday-Thursday • 11AM-9PM<br/>Friday &amp; Saturday • 11AM-10PM</p>
             <p>Live music every Tuesday &amp; Thursday evening</p>
             <p>1234 N 1st ST. • Somewhere, California</p>
             <p> Reservations RECOMMENDED<br/>800.564.1234</p>
         </div>
-        <div class="gallery grid-item">
+        <div class="grid-item">
             <img src="../static/indoorSetting.jpeg "/>
             <img src="../static/breadThing.jpg"/>
             <img src="../static/chicken.jpg"/>
@@ -56,10 +55,10 @@
         </div>
     </div>
     <div class="footer grid-item">
-        <a href="menu.html">Menus</a>
-        <a href="catering.html">catering</a>
-        <a href="info.html">Hours &amp; Location</a>
-        <a href="gift-cards.html">Gift Cards</a>
+        <a href="menu">Menus</a>
+        <a href="catering">catering</a>
+        <a href="info">Hours &amp; Location</a>
+        <a href="gift-cards">Gift Cards</a>
         <p>“Contact Us”<br/> Italianrestaurant@yahoo.com</p>
         <p>© Italian restaurant. All Rights Reserved<br/></p>
     </div>
