@@ -1,48 +1,16 @@
-FROM python:3.9
+FROM python:3.11.4
 
-# Set environment variables
-ENV PYTHONUNBUFFERED 1
+# update packages
+RUN apt-get -qq update
+RUN apt-get install --yes apache2 apache2-dev
+RUN pip install mod_wsgi
 
-# Set work directory
 RUN mkdir /code
 WORKDIR /code
 
-# Install dependencies
 COPY requirements.txt /code/
-RUN pip install --upgrade pip
-RUN pip install -v -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Install Apache and mod_wsgi
-RUN apt-get update && apt-get install -y apache2 apache2-dev
-RUN pip install mod_wsgi-httpd mod_wsgi
-RUN python -c "import django; print(django.__path__)"
-
-# Copy project
 COPY . /code/
 
-# Configure Apache and Enable mod_wsgi
-RUN echo "LoadModule wsgi_module /usr/local/lib/python3.9/site-packages/mod_wsgi/server/mod_wsgi-py39.cpython-39-x86_64-linux-gnu.so" > /etc/apache2/mods-available/wsgi.load
-RUN a2enmod wsgi
-
-# Apache configuration
-RUN echo "<VirtualHost *:80>\n\
-    ServerName localhost\n\
-    DocumentRoot /code\n\
-    WSGIDaemonProcess restaurant_site python-path=/code/restaurant_site\n\
-    WSGIProcessGroup restaurant_site\n\
-    WSGIScriptAlias / /code/restaurant_site/restaurant_site/wsgi.py\n\
-    <Directory /code/restaurant_site/restaurant_site>\n\
-        <Files wsgi.py>\n\
-            Require all granted\n\
-        </Files>\n\
-    </Directory>\n\
-</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
-
-# Changes the ownership of the directory to the www-data user
-RUN chown -R www-data:www-data /code
-
-# Sets the permissions of the directory so that the owner can read, write, and execute, while group members and others can read and execute
-RUN chmod -R 755 /code
-
-EXPOSE 80 3500
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+CMD mod_wsgi-express start-server /code/restaurant_site/restaurant_site/wsgi.py --user www-data --group www-data
