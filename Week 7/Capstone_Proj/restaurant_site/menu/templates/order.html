@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Italian restaurant - Order</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <nav>
+        <a href="home">Home</a>
+        <a href="menu">Menu</a>
+        <a href="catering">Catering</a>
+        <a href="info">Hours &amp; Location</a>
+    </nav>
+
+    <div class="order-section">
+        <h2>Place Your Order</h2>
+        <div id="order-container">
+        </div>
+        <button id="btnCheckout">Checkout</button>
+    </div>
+
+    <div class="menu-section">
+        <!-- Menu items will be dynamically added here -->
+    </div>
+
+    <div class="footer grid-item">
+        <a href="menu">Menus</a>
+        <a href="catering">Catering</a>
+        <a href="info">Hours &amp; Location</a>
+        <a href="giftCards">Gift Cards</a>
+        <p>“Contact Us”<br/> Italianrestaurant@yahoo.com</p>
+        <p>© Italian restaurant. All Rights Reserved<br/></p>
+    </div>
+
+    <script src="{% static 'js/menuItems.js' %}"></script>
+    <script src="{% static 'js/order.js' %}"></script>
+</body>
+</html>

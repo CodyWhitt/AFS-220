@@ -1,0 +1,50 @@
+Folder PATH listing
+Volume serial number is 680F-4AE7
+C:.
+|   dockerfile
+|   output.doc
+|   requirements.txt
+|   
++---env
+\---restaurant_site
+    |   db.sqlite3
+    |   manage.py
+    +---menu
+    |   |   admin.py
+    |   |   apps.py
+    |   |   models.py
+    |   |   tests.py
+    |   |   urls.py
+    |   |   views.py
+    |   |   __init__.py
+    |   +---migrations
+    |   +---static
+    |   |   |   breadThing.jpg
+    |   |   |   chicken.jpg
+    |   |   |   indoorSetting.jpeg
+    |   |   |   italy-flag.jpg
+    |   |   |   lasagna.jpeg
+    |   |   |   outsidePatio.jpg
+    |   |   |   
+    |   |   +---css
+    |   |   |       style.css 
+    |   |   \---js
+    |   |           giftCard.js
+    |   |           menu.js
+    |   |           menuItems.js
+    |   |           order.js
+    |   +---templates
+    |   |       catering.html
+    |   |       giftCards.html
+    |   |       home.html
+    |   |       info.html
+    |   |       menu.html
+    |   |       order.html
+    |   \---__pycache__           
+    \---restaurant_site
+        |   asgi.py
+        |   settings.py
+        |   urls.py
+        |   wsgi.py
+        |   __init__.py
+        \---__pycache__
