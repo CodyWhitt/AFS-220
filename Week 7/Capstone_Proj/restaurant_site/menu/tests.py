@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 
 class GiftCardPurchaseTestCase(TestCase):
@@ -32,3 +32,11 @@ class OrderViewTests(TestCase):
         self.assertContains(response, '<h2>Place Your Order</h2>')
         self.assertContains(response, '<button id="btnCheckout">Checkout</button>')
         self.assertContains(response, '<div class="menu-section">')
+
+class PageViewTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_page_status_code(self):
+        response = self.client.get('/')
+        self.assertEquals(response.status_code, 200)
